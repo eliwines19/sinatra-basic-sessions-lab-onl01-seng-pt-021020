@@ -7,14 +7,14 @@ class App < Sinatra::Base
     set :session_secret, "secret"
   end
 
-  get '/' do 
+  get '/' do
     erb :index
   end
 
-  get '/checkout' do 
+  get '/checkout' do
     session[:item] = params[:item]
     @session = session
     erb :checkout
   end
-  
+
 end
